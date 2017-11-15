@@ -1,0 +1,9 @@
+For this workshop. We will demonstration how to check log / configuration of container running
+
+1. Create container nginx with command:"docker run -dt --name nginx -p 80:80 labdocker/nginx:badversion" 
+
+2. Check configuration of container with command: "docker inspect nginx |more"
+3. Check log of container with command: "docker logs nginx |more"
+4. Clean up lab:
+	docker stop nginx
+	docker rm nginx	

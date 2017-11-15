@@ -1,0 +1,33 @@
+Instruction for implement docker on RealWorld:
+Note: This instruction will start for swarm for real workshop with NIPA Cloud:
+====================================================
+Lab Description:
+VMName:								Machine name			Roles:						IP Address:			
+DockerServer						DockerServer			Stanalone					192.168.199.X
+
+Need to record public ip address:
+x.x.x.x
+
+===================================================
+Install Docker Engine:
+===================================================
+
+1. SCP file in folder "Demo_NIPA_Cloud" to server: /home/nc-user by command:
+    cd /Demo_NIPA_Cloud
+	scp -i ~/.ssh/<your private key> * nc-user@<public ip address>:/home/nc-user
+
+2. SSH to server and operate execute permission on file sh that we SCP upload by command:
+	ssh -i !/.ssh/<your private key> nc-user@<putlic ip address>
+	chmod +x *.sh
+
+3. Start install docker engine by script:
+	./initialsetup_docker.sh
+	
+4. Logoff and LogOn Docker machine again
+	ssh -i !/.ssh/<your private key> nc-user@<putlic ip address>
+
+5. Test deploy container by command:
+	docker run -dt --name nginxtest -p 80:80 labdocker/nginx:latest
+
+6. Test open browser/curl for check result:
+	curl http://<public ip>
