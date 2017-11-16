@@ -55,7 +55,10 @@ umask 077; tar -zcvf private_keys_backup.tar.gz ~/.docker/trust/private; umask 0
 #####################################
 Restore key:
 #####################################
-umask 077; tar -zcvf private_keys_backup.tar.gz ~/.docker/trust/private; umask 022
+scp private_keys_backup.tar.gz docker@192.168.99.100:/home/docker/
+mkdir ~/.docker/trust/
+mkdir ~/.docker/trust/private
+umask 077; tar -xzvf private_keys_backup.tar.gz -C /home/docker; umask 022
 
 
 6. Remove existing image and test pull image from hub.docker.com by command:
