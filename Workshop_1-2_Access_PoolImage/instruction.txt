@@ -40,3 +40,5 @@ Pull image (Access to docker-machine via SSH first)
     docker pull labdocker/mysql:latest
     docker pull labdocker/redis:latest
     docker pull labdocker/alpinepython:2.7-onbuild
+    docker pull labdocker/linenotify:bot_v1
+    docker pull labdocker/cluster:webservicelite
